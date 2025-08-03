@@ -1,0 +1,47 @@
+#TO_DO LIST
+todo_list=[]
+def add_task():
+    task=input("Enter a New Task:")
+    todo_list.append(task)
+    print("Task added successfully")
+def show_task():
+    if len(todo_list)==0:
+        print("no tasks")
+    else:
+        print("List of Tasks:")
+        for i, t in enumerate(todo_list):
+            print(f"{i+1}.{t}")
+def delete_task():
+    if len(todo_list)==0:
+        print("No Tasks to be Deleted")
+    else:
+        print("todo_list:")
+        for i, t in enumerate(todo_list):
+            print(f"{i+1}.{t}")
+        choice = int(input("Enter the Task Number to Delete:"))
+        if 0<choice<=len(todo_list):
+            del todo_list[choice-1]
+            print("Task was Successfully Deleted")
+        else:
+            print("Invalid task number")
+def main():
+    while True:
+        print("TO-D0-LIST")
+        print("1.Add Task")
+        print("2.Show Task")
+        print("3.Delete Task")
+        print("4.Exit")
+        choice=int(input("Enter your choice:"))
+        if choice==1:
+            add_task()
+        elif choice==2:
+            show_task()
+        elif choice==3:
+            delete_task()
+        elif choice==4:
+            print("Thank You For Using The TO-DO List") 
+            break
+        else:
+            print("Invalid choice.Please try again") 
+if __name__=="__main__":
+    main()
